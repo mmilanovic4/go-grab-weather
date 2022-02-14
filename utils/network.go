@@ -30,6 +30,9 @@ func SendRequest(url string, vars map[string]string, output interface{}, verbose
 	if err != nil {
 		log.Fatal(err)
 	}
+	if res.StatusCode < 200 || res.StatusCode > 300 {
+		log.Fatal("Request not successful.")
+	}
 	defer res.Body.Close()
 
 	body, err := io.ReadAll(res.Body)

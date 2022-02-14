@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/mmilanovic4/go-grab-weather/models"
@@ -20,6 +21,10 @@ func main() {
 	query = flag.String("q", "", "City")
 	verbose = flag.Bool("v", false, "Verbosity")
 	flag.Parse()
+
+	if *query == "" {
+		log.Fatal("Query parameter is required!")
+	}
 
 	params := make(map[string]string)
 	params["q"] = *query

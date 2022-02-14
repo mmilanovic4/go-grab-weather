@@ -15,7 +15,7 @@ go build ./main.go
 First you'll need to generate your API key on [OpenWeather](https://home.openweathermap.org/api_keys). After that, you'll need to store it in your `.envrc` file:
 
 ```
-echo export OPEN_WEATHER_API_KEY=1234567890 > my-project/.envrc
+echo export OPEN_WEATHER_API_KEY=1234567890 > .envrc
 direnv allow
 echo $OPEN_WEATHER_API_KEY
 ```
